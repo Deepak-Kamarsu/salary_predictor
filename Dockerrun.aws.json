@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "flask",
+            "image": "kamarsu/flask-image",
+            "hostname": "flask",
+            "essential": true,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "kamarsu/nginx-image",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 8087,
+                    "containerPort": 8087                    
+                }
+            ],
+            "links": ["flask"],
+            "memory": 128
+        }
+    ]
+}

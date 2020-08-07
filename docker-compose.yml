@@ -15,7 +15,5 @@ services:
     build: ./nginx
     container_name: nginx
     restart: always
-    expose:
-      - 8087
     ports:
       - "8087:8087"

@@ -14,15 +14,3 @@ after_success:
     -docker push kamarsu/flask-image
     -docker push kamarsu/nginx-image
     
-deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "salary_predictor"
-    env: "SalaryPredictor-env"
-    bucket_name: "elasticbeanstalk-us-east-2-858669094415"
-    bucket_path: "salary_predictor"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    

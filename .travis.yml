@@ -8,3 +8,5 @@ services:
 before_install:
     - docker build -t kamarsu/flask-image ./flask
     
+after_success:
+    - docker build -t kamarsu/flask-image ./flask

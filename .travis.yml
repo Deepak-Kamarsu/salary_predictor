@@ -8,7 +8,7 @@ services:
 after_success:
     - docker build -t kamarsu/flask-image ./flsk
     - docker build -t kamarsu/nginx-image ./nginx
-    # Log-in to the Docker CLI
+    # Log-in to the Docker-CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Push the images to Docker hub
     -docker push kamarsu/flask-image

@@ -4,9 +4,12 @@ language: generic
 
 services:
     - docker
+
+before_install:
+    - docker build -t kamarsu/flask-image ./flask
     
 after_success:
-    - docker build -t kamarsu/flask-image ./flsk
+    - docker build -t kamarsu/flask-image ./flask
     - docker build -t kamarsu/nginx-image ./nginx
     # Log-in to the Docker-CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin

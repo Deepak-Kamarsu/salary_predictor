@@ -10,3 +10,9 @@ before_install:
     
 after_success:
     - docker build -t kamarsu/flask-image ./flask
+    - docker build -t kamarsu/nginx-image ./nginx
+    # Log-in to the Docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Push the images to Docker hub
+    - docker push kamarsu/flask-image
+    - docker push kamarsu/nginx-image
